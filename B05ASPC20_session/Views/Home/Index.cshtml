@@ -1,0 +1,18 @@
+﻿ @model IEnumerable<Cart>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>
+        @ViewBag.SessionId
+    </p>
+    <input type="text" value="@ViewBag.SessionId" />
+    <p>Learn about <a asp-action="AddToCart" asp-controller="Home" asp-route-name="">Add</a>.</p>
+</div>
+@foreach(var item in Model)
+{
+   <div>@item.Name </div>
+    <div>@item.Qty </div>
+}
